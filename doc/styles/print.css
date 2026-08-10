@@ -1,0 +1,55 @@
+/* ============================================================
+   PRINT — ottimizzazioni per export PDF
+   ============================================================ */
+
+@media print {
+
+  @page {
+    size: A4;
+    margin: 2.5cm 3cm 2.5cm 3cm;
+  }
+
+  body {
+    background: white;
+    font-size: 11pt;
+    line-height: 1.6;
+    padding: 0;
+  }
+
+  .page {
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+    border-radius: 0;
+  }
+
+  /* Evita che i titoli rimangano soli a fondo pagina */
+  h1, h2, h3 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Evita che questi blocchi vengano spezzati tra due pagine */
+  .fig-wrap,
+  blockquote,
+  .katex-display,
+  pre,
+  video {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Ogni capitolo inizia su pagina nuova */
+  .chapter-start {
+    page-break-before: always;
+    break-before: always;
+  }
+
+  /* Mantieni i colori di sfondo dei callout nel PDF */
+  blockquote,
+  .katex-display {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

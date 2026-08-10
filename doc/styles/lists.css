@@ -1,0 +1,123 @@
+/* ============================================================
+   LISTS — Unordered, ordered and nested lists
+   ============================================================ */
+
+/* ---- Base Styles ---- */
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+  margin: 12px 0;
+}
+
+li {
+  position: relative;
+  padding-left: 24px;
+  margin-bottom: 6px;
+  line-height: 1.7;
+  color: #3d3d3a;
+}
+
+/* ---- Unordered Lists (Bullets, Dashes, Squares) ---- */
+
+/* Level 1: Bullet (•) */
+ul > li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #7F77DD;
+  font-weight: bold;
+  font-size: 16px;
+  top: -1px;
+}
+
+/* Level 2: En Dash (–) */
+ul ul > li::before {
+  content: "–";
+  color: #AFA9EC;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Level 3: Square (▪) */
+ul ul ul > li::before {
+  content: "▪";
+  color: #AFA9EC;
+  font-size: 12px;
+}
+
+/* ---- Ordered Lists (Numbers, Letters, Roman) ---- */
+
+/* Level 1: Numbers (1, 2, 3...) */
+ol {
+  counter-reset: ol-level-1;
+}
+
+ol > li {
+  counter-increment: ol-level-1;
+}
+
+ol > li::before {
+  content: counter(ol-level-1) ".";
+  position: absolute;
+  left: 0;
+  color: #7F77DD;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Level 2: Lowercase Letters (a, b, c...) */
+ol ol {
+  counter-reset: ol-level-2;
+}
+
+ol ol > li {
+  counter-increment: ol-level-2;
+}
+
+ol ol > li::before {
+  content: counter(ol-level-2, lower-alpha) ")";
+  color: #7F77DD;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* Level 3: Lowercase Roman (i, ii, iii...) */
+ol ol ol {
+  counter-reset: ol-level-3;
+}
+
+ol ol ol > li {
+  counter-increment: ol-level-3;
+}
+
+ol ol ol > li::before {
+  content: counter(ol-level-3, lower-roman) ".";
+  color: #AFA9EC;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+/* ---- Nested Spacing ---- */
+ul ul, ol ol, ul ol, ol ul {
+  margin: 4px 0 6px 0;
+  padding-left: 8px;
+}
+
+/* ---- Paragraphs & Math inside list items ---- */
+ul li p,
+ol li p {
+  margin-top: 4px;
+  margin-bottom: 6px;
+}
+
+ul li p:last-child,
+ol li p:last-child {
+  margin-bottom: 0;
+}
+
+ul li .katex-display,
+ol li .katex-display {
+  margin: 10px 0;
+  text-align: center;
+}
+

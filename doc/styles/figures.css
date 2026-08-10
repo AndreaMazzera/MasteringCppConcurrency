@@ -1,0 +1,94 @@
+/* ============================================================
+   FIGURES — Images with text, inline and video
+   ============================================================ */
+
+/* ---- Main Structure (Container) ---- */
+.fig-float {
+  margin: 24px 0;
+  display: block;
+}
+
+/* ---- Inner Image ---- */
+.fig-float img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  object-fit: contain;
+}
+
+/* ---- Alignments ---- */
+
+/* 1. Left */
+.fig-float.left {
+  float: left;
+  margin-right: 28px;
+  margin-bottom: 16px;
+}
+
+/* 2. Right */
+.fig-float.right {
+  float: right;
+  margin-left: 28px;
+  margin-bottom: 16px;
+}
+
+/* 3. Center */
+.fig-float.center {
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+/* ---- Caption Below Image ---- */
+.fig-caption {
+  font-size: 0.85rem;
+  color: #73726c;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-top: 10px;
+  text-align: center;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+/* ---- Inline Images ---- */
+img.inline-sm {
+  height: 1.4em;
+  vertical-align: middle;
+  border-radius: 4px;
+}
+
+img.inline-md {
+  height: 2.8em;
+  vertical-align: middle;
+  border-radius: 6px;
+}
+
+/* ---- Full Width Image ---- */
+img.block {
+  width: 100%;
+  border-radius: 16px;
+  margin: 24px 0;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Video ---- */
+video {
+  width: 100%;
+  border-radius: 16px;
+  margin: 24px 0;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ---- Clearfix Layout ---- */
+.clearfix::after,
+article::after, 
+main::after {
+  content: "";
+  display: table;
+  clear: both;
+}

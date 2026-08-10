@@ -1,0 +1,21 @@
+# IDEs and Editors
+**/.vscode/
+doc/references/
+
+# Build Artifacts, Binaries, and Heavy Assets
+build/
+install/
+bin/
+obj/
+*.o
+*.obj
+*.exe
+*.out
+*.pdf
+
+# Temporary and Log Files
+*.log
+*.tmp
+*.ini
+.DS_Store
+Thumbs.db

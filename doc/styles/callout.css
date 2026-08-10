@@ -1,0 +1,47 @@
+/* ============================================================
+   CALLOUTS — blockquote, note, avvertimenti
+   ============================================================ */
+
+blockquote {
+  border-left: 3px solid #7F77DD;
+  background: #EEEDFE;
+  border-radius: 0 6px 6px 0;
+  padding: 10px 16px;
+  margin: 18px 0;
+  color: #3C3489;
+  font-size: 14px;
+  font-family: system-ui, sans-serif;
+}
+
+blockquote::before {
+  content: 'NOTA';
+  display: block;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #534AB7;
+  margin-bottom: 4px;
+}
+
+/* ---- Varianti callout ---- */
+/* Uso: <blockquote class="warning"> oppure <blockquote class="tip"> */
+
+blockquote.warning {
+  border-left-color: #BA7517;
+  background: #FAEEDA;
+  color: #633806;
+}
+blockquote.warning::before {
+  content: 'ATTENZIONE';
+  color: #854F0B;
+}
+
+blockquote.tip {
+  border-left-color: #3B6D11;
+  background: #EAF3DE;
+  color: #27500A;
+}
+blockquote.tip::before {
+  content: 'CONSIGLIO';
+  color: #3B6D11;
+}

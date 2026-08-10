@@ -1,0 +1,62 @@
+/* ============================================================
+   BASE — Reset, Body, A4 Page Layout
+   ============================================================ */
+
+/* ---- Reset ---- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---- Body (Document Canvas) ---- */
+body {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #2c2c2a;
+  background-color: #525659;
+  padding: 32px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+/* ---- A4 Page Container ---- */
+.a4-page {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  background: #ffffff;
+  padding: 20mm 20mm 25mm 20mm;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  margin-top: 20px;
+}
+
+/* ---- Page Counter Footer ---- */
+.a4-page::after {
+  content: "Pagina " attr(data-page-number);
+  position: absolute;
+  bottom: 10mm;
+  right: 20mm;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  color: #888780;
+}
+
+/* ---- Chapter Metadata ---- */
+.chapter-meta {
+  font-size: 13px;
+  color: #888780;
+  margin-bottom: 32px;
+  letter-spacing: 0.04em;
+}
+
+/* ---- Divider ---- */
+.divider {
+  border: none;
+  border-top: 0.5px solid #e0dfd8;
+  margin: 28px 0;
+}

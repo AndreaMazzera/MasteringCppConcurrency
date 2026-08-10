@@ -1,0 +1,91 @@
+/* ============================================================
+   CODE — Code blocks, header bar and inline code
+   ============================================================ */
+
+/* ---- Code Block Wrapper ---- */
+.code-wrapper {
+  margin: 24px 0;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #1e1e1e;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+/* ---- Code Header Bar ---- */
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 16px;
+  background: #252526;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* ---- Language Indicator ---- */
+.code-lang {
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #858585;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* ---- Copy Button ---- */
+.copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  color: #858585;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.copy-btn:active {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.copy-btn.copied {
+  color: #4ec9b0;
+}
+
+.copy-icon {
+  display: block;
+}
+
+/* ---- Pre & Code Area ---- */
+.code-wrapper pre {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+  background: transparent;
+}
+
+.code-wrapper code {
+  font-family: 'SF Mono', Consolas, Monaco, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #d4d4d4;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  tab-size: 2;
+}
+
+/* ---- Inline Code ---- */
+p code, li code {
+  font-family: 'SF Mono', Consolas, Monaco, 'Liberation Mono', 'Courier New', monospace;
+  font-size: 0.85em;
+  background: rgba(0, 0, 0, 0.04);
+  color: #0f172a;
+  padding: 2px 6px;
+  border-radius: 4px;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}

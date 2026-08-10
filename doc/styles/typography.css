@@ -1,0 +1,74 @@
+/* ============================================================
+   TYPOGRAPHY — titoli, paragrafi, testo inline
+   ============================================================ */
+
+h1 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #1a1a18;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 36px 0 10px;
+  color: #1a1a18;
+  border-bottom: 0.5px solid #e0dfd8;
+  padding-bottom: 6px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 24px 0 8px;
+  color: #1a1a18;
+}
+
+p {
+  margin-bottom: 14px;
+  color: #3d3d3a;
+}
+
+strong {
+  font-weight: 600;
+}
+
+em {
+  font-style: italic;
+}
+
+/* ---- Numerazione automatica sezioni via CSS counters ---- */
+
+#content {
+  counter-reset: h1 h2 h3;
+}
+
+/* h1 = numero capitolo */
+#content h1 {
+  counter-reset: h2 h3;
+  counter-increment: h1;
+}
+#content h1::before {
+  content: "Capitolo " counter(h1) " — ";
+  color: #7F77DD;
+}
+
+/* h2 = paragrafo → [capitolo].[paragrafo] */
+#content h2 {
+  counter-reset: h3;
+  counter-increment: h2;
+}
+#content h2::before {
+  content: counter(h1) "." counter(h2) " ";
+  color: #7F77DD;
+}
+
+/* h3 = sottoparagrafo → [capitolo].[paragrafo].[sotto] */
+#content h3 {
+  counter-increment: h3;
+}
+#content h3::before {
+  content: counter(h1) "." counter(h2) "." counter(h3) " ";
+  color: #7F77DD;
+}
